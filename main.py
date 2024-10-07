@@ -6,7 +6,8 @@ st.write("Group Members:"
 "Drilon, Rafael Francisco V. - 2021130296 - Remigaraki"
 "Carrillo, Nathaniel James C. - 2023106949 - Semajjang"
 "Herrera, Kael Lorenzo - 2021136986 - chiinatsu"
-"Jeska Ashley B. Chan - 2021135860 - JskaChan") 
+"Jeska Ashley B. Chan - 2021135860 - JskaChan"
+"Magat, Rolando R. - 2021130146 - rmgt9500") 
 
 import pandas as pd
 import numpy as np
