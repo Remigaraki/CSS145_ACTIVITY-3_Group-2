@@ -2,7 +2,11 @@ import streamlit as st
 
 st.title("Activity 3 - CSS145-BM3-Group 2")
 
-st.write("Group Members: Drilon, Rafael Francisco V. - 2021130296 - Remigaraki") 
+st.write("Group Members:"
+"Drilon, Rafael Francisco V. - 2021130296 - Remigaraki"
+"Carrillo, Nathaniel James C. - 2023106949 - Semajjang"
+"Herrera, Kael Lorenzo - 2021136986 - chiinatsu"
+"Jeska Ashley B. Chan - 2021135860 - JskaChan") 
 
 import pandas as pd
 import numpy as np
@@ -90,6 +94,8 @@ def total_price_distribution():
     plt.title('Distribution of Total Prices')
     plt.grid(True, color='gray', alpha=0.5, linestyle='--')
     plt.show()
+    st.pyplot(plt)
+    plt.clf()
 
 total_price_distribution()
 
@@ -101,6 +107,8 @@ def payment_method_distribution():
     plt.title('Distribution of Payment Methods')
     plt.axis('equal')
     plt.show()
+    st.pyplot(plt)
+    plt.clf()
 
 payment_method_distribution()
 
