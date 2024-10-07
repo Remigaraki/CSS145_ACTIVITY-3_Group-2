@@ -4,3 +4,4 @@ Group Members:
 Drilon, Rafael Francisco V. - 2021130296 - Remigaraki
 Carrillo, Nathaniel James C. - 2023106949 - Semajjang
 Herrera, Kael Lorenzo - 2021136986 - chiinatsu
+Jeska Ashley B. Chan - 2021135860 - JskaChan
