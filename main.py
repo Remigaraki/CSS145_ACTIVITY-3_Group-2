@@ -48,7 +48,48 @@ df['Add-on Total'].value_counts()
 st.subheader("#SECTION II.")
 
 st.subheader("Jeska Chan")
-#insert code here
+def histogram_agedistribution():
+    fig, ax = plt.subplots()
+    ax.hist(df['Age'], bins=20, color='#ffd447', edgecolor='black')
+    
+    ax.set_xlabel('Age Brackets')
+    ax.set_ylabel('Frequency')
+    ax.set_title('Customer Age Distribution')
+    
+    ax.grid(True, color='gray', alpha=0.5, linestyle='--')
+    ax.grid(axis='x')
+    
+    st.pyplot(fig)
+    st.pyplot(plt)
+    plt.clf()
+
+st.title('Customer Data Dashboard')
+st.header('Age Distribution')
+histogram_agedistribution()
+
+st.write("Based on the data shown in the figure, the age bracket with the highest frequency of buyers falls between 49 to 51 years old. On the other hand, the lowest number of buyers is between the ages 46 to 48. The data, as per the description, also indicates that the youngest customer is 18 years old, while the oldest is 80. The average age of customers is 49.")
+
+def pie_chart_gender():
+    gender = df['Gender'].value_counts()
+    categories = ['Male', 'Female']
+    colors = ['steelblue', 'palevioletred']
+    
+    fig, ax = plt.subplots()
+    ax.pie(gender, labels=categories, autopct='%1.1f%%', colors=colors, startangle=90,
+           wedgeprops={'width': 0.7, 'edgecolor': 'black', 'linewidth':1})
+    
+    ax.set_title('Customer Gender Distribution')
+    
+    st.pyplot(fig)
+    st.pyplot(plt)
+    plt.clf()
+
+st.title('Customer Data Dashboard')
+st.header('Gender Distribution')
+pie_chart_gender()
+
+st.write("Looking at the pie chart above, we can observe that the majority of electronic sales come from male buyers, with 50.8% of the customers being male, translating to approximately 10,164 buyers. In comparison, female customers account for 49.2%, or around 9835 individuals. While the difference between the two groups is not dramatic considering the total population, a study by Koen van Gelder (2023) suggests that 'men are generally more inclined to purchase electronic products online than women.' This finding aligns with the observed data, highlighting a slight yet notable difference among male consumers in the electronics market.")
+
 
 st.subheader("Kael Herrera")
 #insert code here
