@@ -82,7 +82,29 @@ pie_chart_productcode()
 st.write("The pie chart you see is the current Product Code Distribution for each product. Each segment represents a unique product code, and the data reveals a relatively balanced distribution among the various codes. On average, each product code accounts for approximately 10.1% of the total distribution, indicating a well-distributed variety of products within the dataset.")
 
 st.subheader("Rolando Magat")
-#insert code here
+
+def total_price_distribution():
+    plt.hist(df['Total Price'], bins=30, color='lightgreen', edgecolor='black')
+    plt.xlabel('Total Price (USD)')
+    plt.ylabel('Frequency')
+    plt.title('Distribution of Total Prices')
+    plt.grid(True, color='gray', alpha=0.5, linestyle='--')
+    plt.show()
+
+total_price_distribution()
+
+st.write("The pie chart you see is the current Product Code Distribution for each product. Each segment represents a unique product code, and the data reveals a relatively balanced distribution among the various codes. On average, each product code accounts for approximately 10.1% of the total distribution, indicating a well-distributed variety of products within the dataset.")
+
+def payment_method_distribution():
+    payment_counts = df['Payment Method'].value_counts()
+    plt.pie(payment_counts, labels=payment_counts.index, autopct='%1.1f%%', startangle=90)
+    plt.title('Distribution of Payment Methods')
+    plt.axis('equal')
+    plt.show()
+
+payment_method_distribution()
+
+st.write("The pie chart above illustrates the distribution of various payment methods utilized by customers. The predominant payment method is Credit Cards, accounting for a substantial 29.3% of transactions. Following closely in second place is Bank Transfer, which represents 16.9% of users, while PayPal ranks third. This data suggests that a significant majority of customers prefer to make payments using credit cards or online banking methods.")
 
 st.subheader("Rafael Francisco V. Drilon")
 
