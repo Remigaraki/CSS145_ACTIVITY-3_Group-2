@@ -87,8 +87,46 @@ st.write("The distribution of product types is depicted in the bar chart, with s
 
 
 st.subheader("Nathaniel James Carrillo")
-#insert code here
 
+def line_graph_ordertrend():
+    df['Purchase Date'] = pd.to_datetime(df['Purchase Date'])
+
+    completed_orders = df[df['Order Status'] == 'Completed']
+
+    purchase_date_counts = completed_orders.groupby('Purchase Date')['Order Status'].count()
+
+    moving_average = purchase_date_counts.rolling(window=7).mean()
+    
+    plt.figure(figsize=(12, 6))
+    plt.plot(purchase_date_counts.index, purchase_date_counts.values, label='Original', alpha=0.5, color='red')
+    plt.plot(moving_average.index, moving_average.values, label='7-Day Moving Average', color='purple')
+    plt.xlabel('Purchase Date')
+    plt.ylabel('Number of Orders')
+    plt.title('Number of Orders Over Time')
+    plt.grid(True)
+    plt.xticks(rotation=45)
+    plt.legend()
+    plt.tight_layout()
+    plt.show()
+st.title('Orders Trend Dashboard')
+st.header('Completed Orders Over Time')
+line_graph_ordertrend()
+
+st.write("This line graph shows the number of orders with respect to the purchase date. The red line shows the original data, while the purple line is the moving average of the number of orders per week. In both cases, there is significant growth around the start of 2024, from an average of 18.17 orders to 43.57. This trend may be due to increasing demand following the end of the global pandemic, new technology and videogame releases, and holiday shopping such as during Christmas. Before 2024, the number of orders peaked at 28 on October 7 and was the lowest at only 8 on October 26. During 2024, orders peaked at 63 on January 28 and was the lowest at 24 on February 8.")
+
+def pie_chart_shippingtype():
+    colors = ['blue', 'red', 'yellow', 'green', 'orange']
+    shipping_counts = df['Shipping Type'].value_counts()
+    plt.pie(shipping_counts, labels=shipping_counts.index, autopct='%1.1f%%', startangle=90, colors=colors)
+    plt.title('Distribution of Shipping Type')
+    plt.axis('equal')
+    plt.show()
+
+st.title('Customer Preferences')
+st.header('Preferred Shipping Type')
+pie_chart_shippingtype()
+
+st.write('The pie chart above shows the distribution of shipping types used by the customers. The data indicates that the preferred shipping method is Standard at 33.6% followed by Express and Overnight at 16.8%. The least preferred method is Expedited and Same day shipping at 16.4%.')
 
 
 st.subheader("#SECTION III.")
