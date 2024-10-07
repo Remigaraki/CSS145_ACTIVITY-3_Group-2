@@ -108,6 +108,9 @@ def line_graph_ordertrend():
     plt.legend()
     plt.tight_layout()
     plt.show()
+    st.pyplot(plt)
+    plt.clf()
+
 st.title('Orders Trend Dashboard')
 st.header('Completed Orders Over Time')
 line_graph_ordertrend()
@@ -121,6 +124,8 @@ def pie_chart_shippingtype():
     plt.title('Distribution of Shipping Type')
     plt.axis('equal')
     plt.show()
+    st.pyplot(plt)
+    plt.clf()
 
 st.title('Customer Preferences')
 st.header('Preferred Shipping Type')
