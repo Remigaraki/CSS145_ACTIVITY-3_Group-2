@@ -79,7 +79,7 @@ def pie_chart_productcode():
   plt.clf()
 
 pie_chart_productcode()
-
+st.write("The pie chart you see is the current Product Code Distribution for each product. Each segment represents a unique product code, and the data reveals a relatively balanced distribution among the various codes. On average, each product code accounts for approximately 10.1% of the total distribution, indicating a well-distributed variety of products within the dataset.")
 
 st.subheader("Rolando Magat")
 #insert code here
