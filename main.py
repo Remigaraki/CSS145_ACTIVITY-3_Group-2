@@ -48,7 +48,38 @@ st.subheader("Jeska Chan")
 
 st.subheader("Kael Herrera")
 #insert code here
-#testing
+#Product Ratings - Bar Chart
+def bar_chart_productrating():
+  colors = ['red', 'orange', 'yellow', 'lightgreen', 'green'] 
+
+  rating_counts = df['Rating'].value_counts().sort_index()
+  ratings = rating_counts.index
+  counts = rating_counts.values
+
+  plt.bar(ratings, counts, color=colors)
+  plt.title('Customer Product Ratings (1 - 5)')
+  plt.ylabel('Amount')
+  plt.xlabel('Rating')
+  st.pyplot(plt)
+  plt.clf()
+
+bar_chart_productrating()
+
+st.write("Based on the bar chart above, out of 20,000 customer product ratings, the most frequently selected rating was 3, with 7,963 customers choosing this rating. Interestingly, the next two most common ratings were very close in count: 2 was given by 3,972 customers, while 5, indicating full satisfaction, was chosen by 3,969 customers — a difference of only three. These results show that the majority of customers rated their product in the middle range, with a notable number also expressing either dissatisfaction or full satisfaction")
+
+#Product Code - Pie Chart
+def pie_chart_productcode():
+
+  colors = plt.cm.Paired.colors
+  sku = df['SKU'].value_counts()
+
+  plt.pie(sku, labels=sku.index, autopct='%1.1f%%', colors=colors)
+  plt.title('Product Code Distribution')
+  st.pyplot(plt)
+  plt.clf()
+
+pie_chart_productcode()
+
 
 st.subheader("Rolando Magat")
 #insert code here
